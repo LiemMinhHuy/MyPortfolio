@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import {
   IoMailOutline,
   IoCallOutline,
@@ -166,15 +166,6 @@ const About = () => {
               aria-label="Facebook"
             >
               <FaFacebook />
-            </a>
-            <a
-              href="https://twitter.com/"
-              className="text-primary text-xl hover:scale-110 transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
             </a>
             <a
               href="https://instagram.com/"

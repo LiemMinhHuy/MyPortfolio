@@ -11,7 +11,7 @@ import {
   IoCalendarOutline,
   IoLocationOutline,
 } from "react-icons/io5";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 
 const contactInfo = [
@@ -187,15 +187,7 @@ const Portfolio = () => {
             >
               <FaFacebook />
             </a>
-            <a
-              href="https://twitter.com/"
-              className="text-primary text-xl hover:scale-110 transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
-            </a>
+
             <a
               href="https://instagram.com/"
               className="text-primary text-xl hover:scale-110 transition"
