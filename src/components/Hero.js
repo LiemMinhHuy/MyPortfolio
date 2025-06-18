@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import avatar from "../assets/avatar.jpg";
 
 const TITLES = [
@@ -10,6 +11,7 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState("");
   const [titleIndex, setTitleIndex] = useState(0);
   const [typing, setTyping] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let timeout;
@@ -52,7 +54,10 @@ export default function Hero() {
         </p>
 
         <p className="text-xs sm:text-sm text-white mb-3">Welcome to my website.</p>
-        <button className="bg-white text-primary font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-primary hover:text-white transition">
+        <button
+          className="bg-white text-primary font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-primary hover:text-white transition"
+          onClick={() => navigate('/contact')}
+        >
           Contact Me
         </button>
       </div>

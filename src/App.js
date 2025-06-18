@@ -12,19 +12,19 @@ function App() {
   return (
     <main className="font-fontFamily text-gray-900 bg-black text-white">
       <nav className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 py-4 shadow-md gap-4 sm:gap-0">
-        <div className="text-base font-semibold text-primary cursor-pointer" onClick={() => window.location.href = '/MyPortfolio/'}>
-          myPortfolio
+        <div className="text-base font-semibold text-primary cursor-pointer" onClick={() => window.location.href = '/MyPortfolioo/'}>
+          myPortfolioo
         </div>
         <div className="space-x-2 sm:space-x-4 font-semibold text-xs sm:text-sm flex items-end">
           {[
-            { to: "/", label: "Home" },
-            { to: "/about", label: "About" },
-            { to: "/portfolio", label: "Portfolio" },
-            { to: "/contact", label: "Contact" },
+            { to: "/MyPortfolio/", label: "Home" },
+            { to: "/MyPortfolio/about", label: "About" },
+            { to: "/MyPortfolio/portfolio", label: "Portfolio" },
+            { to: "/MyPortfolio/contact", label: "Contact" },
           ].map((item) => (
             <Link key={item.to} to={item.to} className="relative pb-1 px-1">
               <span>{item.label}</span>
-              {(item.to === '/' ? location.pathname === '/' : location.pathname.startsWith(item.to)) && (
+              {(item.to === '/MyPortfolio/' ? location.pathname === '/MyPortfolio/' : location.pathname.startsWith(item.to)) && (
                 <span className="absolute left-0 right-0 -bottom-1 mx-auto h-1 w-[90%] bg-primary rounded-full"></span>
               )}
             </Link>
@@ -58,10 +58,10 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/MyPortfolio/" element={<Hero />} />
+        <Route path="/MyPortfolio/about" element={<About />} />
+        <Route path="/MyPortfolio/portfolio" element={<Portfolio />} />
+        <Route path="/MyPortfolio/contact" element={<Contact />} />
       </Routes>
     </main>
   );
