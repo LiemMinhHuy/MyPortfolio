@@ -8,6 +8,7 @@ import {
   IoPaperPlane,
 } from "react-icons/io5";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -35,51 +36,108 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+    const [showContact, setShowContact] = useState(false);
+  
   return (
-    <section id="contact" className="py-4 px-20 mx-auto max-w-7xl">
-      <div className="flex flex-col md:flex-row items-start gap-10">
-        <aside className="bg-[#232323] rounded-xl p-6 shadow-lg flex flex-col items-center mb-8 md:mb-0">
-          <img
-            src={avatar}
-            alt="Minh Huy"
-            className="w-[150px] h-[150px] rounded-3xl object-cover border-4 border-[#383838] mb-6"
-          />
-          <h1 className="text-xl font-bold text-white mb-2">Minh Huy</h1>
-          <p className="text-white text-[12px] bg-sixth px-3 py-2 rounded-lg">
-            Web Developer
-          </p>
-          <div className="w-full border-t border-[#383838] my-6"></div>
-          <ul className="w-full text-sm text-white space-y-2 mb-4">
-            {contactInfo.map((item) => (
-              <li
-                key={item.label}
-                className="flex flex-row items-center gap-2"
+    <section id="contact" className="py-4 px-4 sm:px-8 md:px-16 lg:px-20 mx-auto max-w-7xl max-lg:min-h-screen">
+      <div className="flex lg:flex-row max-lg:flex-col items-start gap-6 md:gap-10">
+        <aside className="relative bg-[#232323] rounded-xl p-4 sm:p-6 shadow-lg flex flex-col max-lg:flex-row items-center mb-8 md:mb-0 w-full max-lg:max-w-[760px] lg:w-auto ">
+          <div className="max-lg:flex max-lg:flex-col max-lg:ml-4">
+            <div className="max-lg:flex max-lg:flex-row flex flex-col items-center ">
+              <img
+                src={avatar}
+                alt="Richard Hanrick"
+                className="w-24 h-24 sm:w-[120px] sm:h-[120px] md:w-[150px] md:h-[150px] rounded-3xl object-cover border-4 border-[#383838] mb-6"
+              />
+              <button
+                className="block lg:hidden bg-primary text-white px-4 py-2 rounded-lg mb-4 absolute top-0 right-0"
+                onClick={() => setShowContact((prev) => !prev)}
               >
-                <div className="p-2">{item.icon}</div>
+                {showContact ? "Hide Contact" : "Show Contact"}
+              </button>
+              <div className="max-lg:flex max-lg:flex-col max-lg:ml-4 max-lg:mt-6">
+                <h1 className="text-xl max-lg:text-2xl font-bold text-white mb-2 ">
+                  Minh Huy
+                </h1>
+                <p className="text-white text-[11px] sm:text-[12px] bg-sixth px-3 py-2 rounded-lg">
+                  Web Developer
+                </p>
+              </div>
+            </div>
+            {/* Ẩn border, thông tin liên hệ, social trên mobile, tablet, iPad; chỉ hiện trên desktop (lg trở lên) */}
+            <div className="w-full border-t border-[#383838] my-4 sm:my-6 hidden lg:block"></div>
+            <ul
+              className={`w-full text-xs sm:text-sm text-white space-y-2 mb-4 ${
+                showContact ? "" : "hidden"
+              } lg:block`}
+            >
+              <li className="flex flex-row items-center gap-2">
+                <div className="p-2">
+                  <IoMailOutline className="text-primary text-lg" />
+                </div>
                 <div>
-                  <p className="text-[12px] text-fifth whitespace-nowrap uppercase">
-                    {item.label}:
+                  <p className=" text-[12px] text-fifth whitespace-nowrap uppercase">
+                    Email:
                   </p>
                   <div>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-white truncate max-w-[180px] inline-block align-middle hover:underline"
-                        title={item.value}
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span className="text-white truncate max-w-[180px] inline-block align-middle">
-                        {item.value}
-                      </span>
-                    )}
+                    <a
+                      href="mailto:liemminhhuy2003@gmail.com"
+                      className="text-white truncate max-w-[180px] max-lg:max-w-[300px] inline-block align-middle"
+                      title="liemminhhuy2003@gmail.com"
+                    >
+                      liemminhhuy2003@gmail.com
+                    </a>
                   </div>
                 </div>
               </li>
-            ))}
-          </ul>
-          <div className="flex gap-4 mt-2">
+              <li className="flex flex-row items-center gap-2">
+                <div className="p-2">
+                  <IoCallOutline className="text-primary text-lg" />
+                </div>
+                <div>
+                  <p className="text-[12px] text-fifth whitespace-nowrap uppercase">
+                    Phone:
+                  </p>
+                  <div>
+                    <a href="tel:+12133522795" className="text-white truncate">
+                      +84 976862582
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li className="flex flex-row items-center gap-2">
+                <div className="p-2">
+                  <IoCalendarOutline className="text-primary text-lg" />
+                </div>
+                <div>
+                  <p className="text-[12px] text-fifth whitespace-nowrap uppercase">
+                    Birthday:
+                  </p>
+                  <div>
+                    <span className="text-white truncate">
+                      December 16, 2003
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li className="flex flex-row items-center gap-2">
+                <div className="p-2">
+                  <IoLocationOutline className="text-primary text-lg" />
+                </div>
+                <div>
+                  <p className="text-[12px] text-fifth whitespace-nowrap uppercase">
+                    Location:
+                  </p>
+                  <div>
+                    <span className="text-white truncate">
+                      Ho Chi Minh City
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="flex gap-4 mt-2 hidden lg:flex">
             <a
               href="https://facebook.com/"
               className="text-primary text-xl hover:scale-110 transition"

@@ -11,9 +11,9 @@ function App() {
 
   return (
     <main className="font-fontFamily text-gray-900 bg-black text-white">
-      <nav className="flex items-center justify-between px-20 py-4 shadow-md ">
+      <nav className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 py-4 shadow-md gap-4 sm:gap-0">
         <div className="text-base font-semibold text-primary">myPortfolio</div>
-        <div className="space-x-4 font-semibold text-sm flex items-end">
+        <div className="space-x-2 sm:space-x-4 font-semibold text-xs sm:text-sm flex items-end">
           {[
             { to: "/", label: "Home" },
             { to: "/about", label: "About" },
@@ -28,7 +28,7 @@ function App() {
             </Link>
           ))}
         </div>
-        <div>
+        <div className="mt-2 sm:mt-0">
           <a
             href="https://github.com/LiemMinhHuy"
             target="_blank"

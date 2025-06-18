@@ -39,20 +39,20 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayedText, typing, titleIndex]);
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between min-h-[90vh] md:px-60 py-12">
+    <section className="flex flex-col md:flex-row items-center justify-start min-h-screen xl:min-h-[90vh] px-2 sm:px-4 md:px-20 lg:px-40 py-6 md:py-12 w-full bg-black">
       {/* Left text */}
-      <div className="md:w-1/2 w-full mb-8 md:mb-0 ">
-        <p className="text-sm md:text-xl font-bold mb-4 text-primary ">
+      <div className="md:w-1/2 w-full mb-8 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left">
+        <p className="text-sm sm:text-base md:text-xl font-bold mb-3 text-primary">
           Hello, I'm
-          <span className="block text-white text-5xl md:text-5xl">Minh Huy</span>
+          <span className="block text-white text-2xl sm:text-3xl md:text-5xl">Minh Huy</span>
         </p>
-        <p className="text-xl text-white mb-4 min-h-[32px]">
+        <p className="text-base sm:text-lg md:text-xl text-white mb-3 min-h-[28px]">
           {displayedText}
-          <span className="inline-block w-1 h-6 bg-primary align-middle animate-pulse ml-1"></span>
+          <span className="inline-block w-1 h-5 bg-primary align-middle animate-pulse ml-1"></span>
         </p>
 
-        <p className="text-sm text-white mb-4">Welcome to my website.</p>
-        <button className="bg-white text-primary font-semibold px-6 py-2 rounded-full shadow hover:bg-primary hover:text-white transition">
+        <p className="text-xs sm:text-sm text-white mb-3">Welcome to my website.</p>
+        <button className="bg-white text-primary font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-primary hover:text-white transition">
           Contact Me
         </button>
       </div>
@@ -61,7 +61,7 @@ export default function Hero() {
         <img
           src={avatar}
           alt="Avatar"
-          className="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-[0_0_80px_0_#fec36180]"
+          className="w-28 h-28 sm:w-36 sm:h-36 md:w-60 md:h-60 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white shadow-[0_0_80px_0_#fec36180]"
         />
       </div>
     </section>
