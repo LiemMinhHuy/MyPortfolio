@@ -12,8 +12,8 @@ function App() {
   return (
     <main className="font-fontFamily text-gray-900 bg-black text-white">
       <nav className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 py-4 shadow-md gap-4 sm:gap-0">
-        <div className="text-base font-semibold text-primary cursor-pointer" onClick={() => window.location.href = '/MyPortfolioo/'}>
-          myPortfolioo
+        <div className="text-base font-semibold text-primary cursor-pointer" onClick={() => window.location.href = 'https://LiemMinhHuy.github.io/MyPortfolio'}>
+          myPortfolio
         </div>
         <div className="space-x-2 sm:space-x-4 font-semibold text-xs sm:text-sm flex items-end">
           {[
