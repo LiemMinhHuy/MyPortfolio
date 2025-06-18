@@ -56,7 +56,7 @@ export default function Hero() {
         <p className="text-xs sm:text-sm text-white mb-3">Welcome to my website.</p>
         <button
           className="bg-white text-primary font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-primary hover:text-white transition"
-          onClick={() => navigate('/contact')}
+          onClick={() => navigate('/MyPortfolio/contact')}
         >
           Contact Me
         </button>
